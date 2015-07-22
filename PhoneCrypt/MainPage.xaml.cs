@@ -114,5 +114,21 @@ namespace PhoneCrypt
         {
             Frame.Navigate(typeof(About)); 
         }
+
+        private void btnDecrypt_Click(object sender, RoutedEventArgs e)
+        {
+            Encryption encryption = new Encryption(this.tbResultd.Text, this.tbPassPhrased.Text);
+            History history;
+
+            this.tbWordd.Text = encryption.decrypt();
+            if (this.tbWordd.Text != "")
+            {
+                history = new History();
+                history.value = this.tbResultd.Text;
+                history.password = this.tbPassPhrased.Text;
+                this.historyRepository.add(history);
+                Refresh_HistoryList();
+            }
+        }
     }
 }
