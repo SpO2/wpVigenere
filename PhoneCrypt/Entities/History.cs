@@ -11,6 +11,9 @@ namespace PhoneCrypt.Entities
     /// </summary>
     public class History
     {
+        private const String IMG_ENCRYPT_URI = "Assets/crypted.png";
+        private const String IMG_DECRYPT_URI = "Assets/decrypted.png";
+
         /// <summary>
         /// Id of the History entity.
         /// </summary>
@@ -28,6 +31,15 @@ namespace PhoneCrypt.Entities
         /// Password used to encrypt the word.
         /// </summary>
         public String password { get; set; }
+        /// <summary>
+        /// Specify the orientation of encryption (encrypt = 0 / decrypt = 1).
+        /// </summary>
+        public int orientation { get; set; }
+        /// <summary>
+        /// The URI of the orientation image to display.
+        /// </summary>
+        [SQLite.Ignore]
+        public String imgOrientation { get; set; } 
 
         /// <summary>
         /// Default constructor.
@@ -37,16 +49,30 @@ namespace PhoneCrypt.Entities
             this.createdAt = DateTime.Now.ToString();
         }
 
+        public void setOrientationImg(int orientation)
+        {
+            switch(orientation)
+            {
+                case 0: this.imgOrientation = IMG_ENCRYPT_URI;
+                    break;
+                case 1: this.imgOrientation = IMG_DECRYPT_URI;
+                    break;
+                default: this.imgOrientation = IMG_ENCRYPT_URI;
+                    break;
+            }
+        }
+
         /// <summary>
         /// Constructor for an History entity.
         /// </summary>
         /// <param name="value">Value of the words encrypted.</param>
         /// <param name="password">Password used to encrypt the word.</param>
-        public History(String value, String password)
+        public History(String value, String password, int orientation)
         {
             this.value = value;
             this.password = password;
             this.createdAt = DateTime.Now.ToString();
+            this.orientation = orientation;
         }
     }
 }

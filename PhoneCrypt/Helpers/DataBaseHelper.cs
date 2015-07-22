@@ -10,9 +10,18 @@ namespace PhoneCrypt.Helpers
 {
     public class DataBaseHelper
     {
+        /// <summary>
+        /// The name of the DataBase.
+        /// </summary>
         public const String DB_PATH = "test.db";
+        /// <summary>
+        /// SQLite connection object.
+        /// </summary>
         public SQLiteConnection dbConn;
 
+        /// <summary>
+        /// Constructor for the DataBaseHelper object.
+        /// </summary>
         public DataBaseHelper()
         {
             if (!CheckFileExists(DB_PATH).Result)

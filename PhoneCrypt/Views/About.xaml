@@ -19,6 +19,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
         <StackPanel Grid.Row="0" Margin="19,0,0,0">
@@ -27,6 +29,21 @@
         </StackPanel>
 
         <TextBlock x:Name="tbAbout" Margin="10,10,10,10" TextWrapping="WrapWholeWords" Text="PhoneCrypt is an encrypting application based on the Vigenere's algorithm." FontSize="24" FontStyle="Italic" Grid.Row="1"></TextBlock>
-        
+        <TextBlock x:Name="tbInfoTitle" Margin="10,10,10,10" TextWrapping="WrapWholeWords" Text="History informations" FontSize="24" Grid.Row="2"></TextBlock>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Image x:Name="imgCrypt" VerticalAlignment="Center" Margin="10,10,10,10" Grid.Row="0" Grid.Column="0" Source="ms-appx:///Assets/crypted.png"></Image>
+            <TextBlock x:Name="tbOrientationc" Margin="10,10,10,10" Text="Meaning : Crypted action, the first element is the uncrypted word and the second element, the passphrase used to encrypt." TextWrapping="WrapWholeWords" Grid.Row="0" Grid.Column="1" FontSize="16"></TextBlock>
+            <Image x:Name="imgDecrypt" VerticalAlignment="Center" Margin="10,10,10,10" Grid.Row="1" Grid.Column="0" Source="ms-appx:///Assets/decrypted.png"></Image>
+            <TextBlock x:Name="tbOrientationd" Margin="10,10,10,10" Text="Meaning : Decrypted action, the first element is the crypted word and the second element, the passphrase used to decrypt." TextWrapping="WrapWholeWords" Grid.Row="1" Grid.Column="1" FontSize="16"></TextBlock>
+        </Grid>
     </Grid>
 </Page>

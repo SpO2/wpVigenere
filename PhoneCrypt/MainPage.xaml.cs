@@ -70,6 +70,7 @@ namespace PhoneCrypt
                 history = new History();
                 history.value = this.tbWord.Text;
                 history.password = this.tbPassPhrase.Text;
+                history.orientation = 0;
                 this.historyRepository.add(history);
                 Refresh_HistoryList();
             }
@@ -126,6 +127,7 @@ namespace PhoneCrypt
                 history = new History();
                 history.value = this.tbResultd.Text;
                 history.password = this.tbPassPhrased.Text;
+                history.orientation = 1;
                 this.historyRepository.add(history);
                 Refresh_HistoryList();
             }

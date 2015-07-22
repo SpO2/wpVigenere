@@ -140,7 +140,8 @@
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock Margin="5,0,0,0" Grid.Row="0" x:Name="Valuetxt" TextWrapping="Wrap" Text="{Binding value}" FontSize="28" Foreground="White"/>
-                                            <TextBlock Grid.Row="0" Text=">" FontSize="28"  HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>
+                                            <Image Name="imgOrientation" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Center" Stretch="Fill" Width="32" Height="32" Source="{Binding imgOrientation}"></Image>
+                                            <!-- <TextBlock Grid.Row="0" Text=">" FontSize="28"  HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White"/>-->
                                             <TextBlock Margin="5,0,0,0" Grid.Row="1" x:Name="PassPhrasetxt"  TextWrapping="Wrap" Foreground="White" FontSize="18" Text="{Binding password}" />
                                             <TextBlock HorizontalAlignment="Right" Margin="0,0,35,0" Grid.Row="3" x:Name="CreateddateTxt" Foreground="White" FontSize="18" TextWrapping="Wrap" Text="{Binding createdAt}" />
                                         </Grid>
@@ -150,7 +151,7 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                     <Button x:Name="btnClearHistoryBot" Margin="10,0,0,0" Content="Clear History" Height="57" Click="btnClearHistory_Click" VerticalAlignment="Bottom"/>
-                    <Button x:Name="btnAbout" HorizontalAlignment="Right" Margin="0,0,10,0" Content="About" Height="57" VerticalAlignment="Bottom" Width="99"/>
+                    <Button x:Name="btnAbout" HorizontalAlignment="Right" Margin="0,0,10,0" Content="About" Height="57" VerticalAlignment="Bottom" Width="99" Click="btnAboute_Click"/>
                 </Grid>
             </PivotItem>
         </Pivot>
