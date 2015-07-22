@@ -64,8 +64,8 @@
             Source="Assets/encryption_1.jpg"
             Stretch="UniformToFill" Opacity="0.6"
         />
-        <Pivot Title="PhoneCrypt" Margin="0,0,0,10">
-            <PivotItem Header="Encrypt" Margin="10,10,10,10">
+        <Pivot x:Uid="MainPagePivot" Title="" Margin="0,0,0,10">
+            <PivotItem x:Uid="PivotItemEncrypt" Header="Encrypt" Margin="10,10,10,10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -74,8 +74,8 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBox x:Name="tbWord" Background="Transparent" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" PlaceholderText="Words" RenderTransformOrigin="0,0" Template="{StaticResource TextBoxControlTemplate}" Foreground="#FFFDF7F7" Height="37" Grid.Row="0"/>
-                    <TextBox x:Name="tbPassPhrase" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" PlaceholderText="PassPhrase" RenderTransformOrigin="0,0" Grid.Row="1" Template="{StaticResource TextBoxControlTemplate}" Height="37">
+                    <TextBox x:Name="tbWord" x:Uid="tbEncryptWord" PlaceholderText="" Background="Transparent" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" RenderTransformOrigin="0,0" Template="{StaticResource TextBoxControlTemplate}" Foreground="#FFFDF7F7" Height="37" Grid.Row="0"/>
+                    <TextBox x:Name="tbPassPhrase" x:Uid="tbEncryptKey" PlaceholderText="" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" RenderTransformOrigin="0,0" Grid.Row="1" Template="{StaticResource TextBoxControlTemplate}" Height="37">
                         <TextBox.Foreground>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Foreground>
@@ -83,7 +83,7 @@
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
                     </TextBox>
-                    <Button HorizontalAlignment="Center" Content="Encrypt" Click="Button_Click" Height="58" Margin="121,0,150,10" Width="109" VerticalAlignment="Bottom" Grid.Row="2" />
+                    <Button HorizontalAlignment="Center" x:Uid="btnEncrypt" Content="" Click="Button_Click" Height="58" Margin="121,0,150,10" Width="109" VerticalAlignment="Bottom" Grid.Row="2" />
                     <TextBox x:Name="tbResult" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" RenderTransformOrigin="0,0" Grid.Row="3" Template="{StaticResource TextBoxControlTemplate}" IsReadOnly="True" Height="37">
                         <TextBox.Foreground>
                             <SolidColorBrush Color="White" Opacity="0"/>
@@ -92,10 +92,10 @@
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
                     </TextBox>
-                    <Button x:Name="btnAboute" HorizontalAlignment="Right" Margin="0,0,10,-0.5" Content="About" Height="58" VerticalAlignment="Bottom" Width="109" Grid.Row="4" Click="btnAboute_Click"/>
+                    <Button x:Name="btnAboute" x:Uid="btnEncryptAbout" Content="" HorizontalAlignment="Right" Margin="0,0,10,-0.5" Height="58" VerticalAlignment="Bottom" Width="109" Grid.Row="4" Click="btnAboute_Click"/>
                 </Grid>
             </PivotItem>
-            <PivotItem Header="Decrypt" Margin="10,10,10,10">
+            <PivotItem x:Uid="PivotItemDecrypt" Header="" Margin="10,10,10,10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -105,7 +105,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBox x:Name="tbWordd" Background="Transparent" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" RenderTransformOrigin="0,0" IsReadOnly="True" Template="{StaticResource TextBoxControlTemplate}" Foreground="#FFFDF7F7" Height="37" Grid.Row="4"/>
-                    <TextBox x:Name="tbPassPhrased" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" PlaceholderText="PassPhrase" RenderTransformOrigin="0,0" Grid.Row="1" Template="{StaticResource TextBoxControlTemplate}" Height="37">
+                    <TextBox x:Name="tbPassPhrased" x:Uid="tbEncryptKey" PlaceholderText="" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" RenderTransformOrigin="0,0" Grid.Row="1" Template="{StaticResource TextBoxControlTemplate}" Height="37">
                         <TextBox.Foreground>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Foreground>
@@ -113,8 +113,8 @@
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
                     </TextBox>
-                    <Button x:Name="btnDecrypt" HorizontalAlignment="Center" Content="Decrypt" Click="btnDecrypt_Click" Height="58" Margin="121,0,150,10" Width="109" VerticalAlignment="Bottom" Grid.Row="2" />
-                    <TextBox x:Name="tbResultd" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" PlaceholderText="Encrypted Word" RenderTransformOrigin="0,0" Grid.Row="0" Template="{StaticResource TextBoxControlTemplate}" Height="37">
+                    <Button x:Name="btnDecrypt" x:Uid="btnDecrypt" Content="" HorizontalAlignment="Center" Click="btnDecrypt_Click" Height="58" Margin="121,0,150,10" Width="109" VerticalAlignment="Bottom" Grid.Row="2" />
+                    <TextBox x:Name="tbResultd" x:Uid="tbEncryptedCrypted"  Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" BorderThickness="2.5,0,2.5,2.5" IsTextPredictionEnabled="False" PlaceholderText="" RenderTransformOrigin="0,0" Grid.Row="0" Template="{StaticResource TextBoxControlTemplate}" Height="37">
                         <TextBox.Foreground>
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Foreground>
@@ -122,10 +122,10 @@
                             <SolidColorBrush Color="White" Opacity="0"/>
                         </TextBox.Background>
                     </TextBox>
-                    <Button x:Name="btnAboutd" HorizontalAlignment="Right" Margin="0,0,10,-0.5" Content="About" Height="58" VerticalAlignment="Bottom" Width="109" Grid.Row="4" Click="btnAboute_Click"/>
+                    <Button x:Name="btnAboutd" x:Uid="btnEncryptAbout" HorizontalAlignment="Right" Margin="0,0,10,-0.5" Height="58" VerticalAlignment="Bottom" Width="109" Grid.Row="4" Click="btnAboute_Click"/>
                 </Grid>
             </PivotItem>
-            <PivotItem Header="History" Margin="10,10,10,10">
+            <PivotItem x:Uid="PivotItemHistory" Header="" Margin="10,10,10,10">
                 <Grid>
                     <ListBox Background="Transparent" Margin="6,53" Height="auto" BorderThickness="2" MaxHeight="580" x:Name="listBoxobj">
                         <ListBox.ItemTemplate>
@@ -150,8 +150,8 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-                    <Button x:Name="btnClearHistoryBot" Margin="10,0,0,0" Content="Clear History" Height="57" Click="btnClearHistory_Click" VerticalAlignment="Bottom"/>
-                    <Button x:Name="btnAbout" HorizontalAlignment="Right" Margin="0,0,10,0" Content="About" Height="57" VerticalAlignment="Bottom" Width="99" Click="btnAboute_Click"/>
+                    <Button x:Name="btnClearHistoryBot" x:Uid="btnClearHistory" Content="" Margin="10,0,0,0" Height="57" Click="btnClearHistory_Click" VerticalAlignment="Bottom"/>
+                    <Button x:Name="btnAbout" x:Uid="btnEncryptAbout" HorizontalAlignment="Right" Margin="0,0,10,0" Content="" Height="57" VerticalAlignment="Bottom" Width="99" Click="btnAboute_Click"/>
                 </Grid>
             </PivotItem>
         </Pivot>
