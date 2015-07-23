@@ -65,7 +65,7 @@
             Stretch="UniformToFill" Opacity="0.6"
         />
         <Pivot x:Uid="MainPagePivot" Title="" Margin="0,0,0,10">
-            <PivotItem x:Uid="PivotItemEncrypt" Header="Encrypt" Margin="10,10,10,10">
+            <PivotItem x:Uid="PivotItemEncrypt" Header="" Margin="10,10,10,10">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
