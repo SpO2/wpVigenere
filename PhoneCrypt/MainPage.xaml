@@ -127,12 +127,19 @@
             </PivotItem>
             <PivotItem x:Uid="PivotItemHistory" Header="" Margin="10,10,10,10">
                 <Grid>
-                    <ListBox Background="Transparent" Margin="6,53" Height="auto" BorderThickness="2" MaxHeight="580" x:Name="listBoxobj">
+                    <ListBox Background="Transparent" Margin="6,53" Height="auto" BorderThickness="2" MaxHeight="580" x:Name="listBoxobj" HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch">
+                                    
+                                </Setter>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
-                                <Grid Width="350">
-                                    <Border Margin="5" BorderBrush="White" BorderThickness="1">
-                                        <Grid>
+                                <Grid Width="Auto" HorizontalAlignment="Stretch">
+                                    <Border Margin="5" BorderBrush="White" BorderThickness="1" Grid.ColumnSpan="3">
+                                        <Grid Width="Auto" HorizontalAlignment="Stretch">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="Auto"/>
                                                 <RowDefinition Height="Auto"/>
