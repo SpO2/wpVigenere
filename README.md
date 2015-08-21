@@ -1,8 +1,8 @@
 # wpVigenere
-Vigenere Encryption appliation for Windows Phone 8.1.
+Vigenere Encryption application for Windows Phone 8.1.
 
 #Libraries
-SQLite for Windows Phone 8.1 (disponible dans le gestionnaire d'extensions).s
+SQLite for Windows Phone 8.1 (disponible dans le gestionnaire d'extensions).
 
 #NuGet
-Paquet sqlite-net.
+sqlite-net package.
